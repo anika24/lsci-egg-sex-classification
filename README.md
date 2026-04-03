@@ -19,10 +19,11 @@ This repository contains the preprocessing and model training code used to evalu
 ## Repository Structure
 
 ```
-clean/
-├── 1_data_preprocessing.ipynb       # Raw image → pickle pipeline
+├── 1_data_preprocessing.ipynb          # Raw image → pickle pipeline
 ├── 2_resnetbit_cross_validation.ipynb  # ResNetBiT 5-fold CV training
-├── 3_yolov5_classification.ipynb    # YOLOv5 5-fold CV training
+├── 3_yolov5_classification.ipynb       # YOLOv5 5-fold CV training
+├── GT_labels_eggs_HH19.csv             # Ground-truth sex labels for HH19 dataset
+├── GT_labels_eggs_HH25.csv             # Ground-truth sex labels for HH25 dataset
 └── README.md
 ```
 
@@ -46,12 +47,13 @@ Dependencies are installed at the top of each notebook. Key packages:
 
 ## Data
 
-Raw data is not included in this repository. The expected input is:
-
-- LSCI PNG images (16-bit, ~4096×3000 px) organized under `HH19/` and `HH25/` subdirectories
-- Ground-truth CSV files: `GT_labels_eggs_HH19.csv`, `GT_labels_eggs_HH25.csv`
+The ground-truth label files (`GT_labels_eggs_HH19.csv`, `GT_labels_eggs_HH25.csv`) are included in this repository.
 
 CSV columns: `image_number, label (0=male/1=female), egg_id, grade, real, stage, sub_folder`
+
+The raw LSCI images (~28 GB) are not included. Images are 16-bit PNG files (~4096×3000 px) organized under `HH19/` and `HH25/` subdirectories, with paths specified per image in the CSV files.
+
+**Data availability:** The raw image dataset is available from the corresponding author upon reasonable request.
 
 ---
 
